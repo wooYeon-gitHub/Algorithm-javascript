@@ -2,17 +2,16 @@
 // 예를 들어 /dev/stdin파일에 적힌 텍스트를 읽어오는 경우, 다음과 같이 코드를 작성한다.
 // 기능: 전체 텍스트를 읽어 온 뒤에, 줄바꿈 기호를 기준으로 구분하여 리스트로 변환하기
 
-
 let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
-// 이 문제의 시간 복잡도는 0(N)이다.
-// 문자열을 수로 변환할 때 parseInt에 비하여 Number의 속도가 더 빠르게 동작
-let n = Number(input[0]);
-let summary = 0;
+let testCase = Number(input[0]);
+let answer = '';
 
-for (let i = 1; i <= n; i++) {
-  summary += i;
+for (let t = 1; t <= testCase; t++) {
+  let data = input[t].split(' ');
+  let a = Number(data[0]);
+  let b = Number(data[1]);
+  answer += a + b + '\n';
 }
-
-console.log(summary);
+console.log(answer);
